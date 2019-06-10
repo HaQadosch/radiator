@@ -1,0 +1,28 @@
+{
+  "pipelines": [
+    {
+      "name": "connect-metrics-wallboard-pipeline",
+      "status": "Succeeded",
+      "start": "2019-06-07T15:17:25.147000+00:00",
+      "lastUpdated": "2019-06-07T15:21:40.225000+00:00"
+    },
+    {
+      "name": "ecs-post-call-transcript-and-sentiment-pipeline",
+      "status": "Failed",
+      "start": "2019-06-06T14:09:03.149000+00:00",
+      "lastUpdated": "2019-06-06T14:09:05.352000+00:00"
+    },
+    {
+      "name": "ecscc-build-radiator-pipeline",
+      "status": "Succeeded",
+      "start": "2019-06-05T16:35:13.785000+00:00",
+      "lastUpdated": "2019-06-05T16:39:58.336000+00:00"
+    },
+    {
+      "name": "xb-amplify-login-pipeline",
+      "status": "Succeeded",
+      "start": "2019-06-07T10:34:21.655000+00:00",
+      "lastUpdated": "2019-06-07T10:37:36.589000+00:00"
+    }
+  ]
+}

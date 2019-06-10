@@ -1,16 +1,17 @@
 import React, { ReactNode } from 'react';
-import { Button, Card, Image } from 'semantic-ui-react';
+import { Button, Card, Image, SemanticCOLORS } from 'semantic-ui-react';
 
 interface ICard {
   src: string;
   header: string;
   meta: string;
   description: ReactNode;
+  stripColor: SemanticCOLORS;
 }
 
-export const CardPipeline: React.FC<ICard> = ({ src, header, meta, description }) => {
+export const CardPipeline: React.FC<ICard> = ({ stripColor, src, header, meta, description }) => {
   return (
-    <Card>
+    <Card color={stripColor}>
       <Card.Content>
         <Image floated='right' size='mini' src={src} />
         <Card.Header>{header}</Card.Header>
@@ -23,7 +24,7 @@ export const CardPipeline: React.FC<ICard> = ({ src, header, meta, description }
             Approve
           </Button>
           <Button basic color='red'>
-            Decline
+            Compile
           </Button>
         </div>
       </Card.Content>

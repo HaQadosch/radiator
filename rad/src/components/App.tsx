@@ -4,6 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 
 import { Header, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import { CardExampleGroups } from './Cards';
+import { MyComponentTest } from './Test';
 
 const App: React.FC = () => {
   return (
@@ -19,22 +20,26 @@ const App: React.FC = () => {
         </Menu.Item>
         <Menu.Item as='a'>
           <Icon name='filter' />
-          Filter by status
+          Sort by status
         </Menu.Item>
         <Menu.Item as='a'>
           <Icon name='filter' />
-          Filter by timestamp
+          Sort by time
         </Menu.Item>
         <Menu.Item as='a'>
           <Icon name='filter' />
-          Filter by name
+          Sort by name
         </Menu.Item>
       </Sidebar>
-
       <Sidebar.Pusher>
         <Segment basic>
           <Header as='h1'>Radiator</Header>
-          <CardExampleGroups />
+          {/* <CardExampleGroups /> */}
+          <MyComponentTest
+            loading={<>"Loading..."</>}
+            oups={err => <>`Something went wrong: ${err ? err.message : 'oups'}`</>}
+            success={data => <CardExampleGroups data={data} />}
+          />
         </Segment>
       </Sidebar.Pusher>
     </Sidebar.Pushable>

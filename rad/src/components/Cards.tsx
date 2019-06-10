@@ -2,36 +2,30 @@ import React from 'react';
 import { Card } from 'semantic-ui-react';
 
 import { CardPipeline } from './Card';
+import { IPipelines } from './Test';
 
-export const CardExampleGroups: React.FC = () => {
+export const CardExampleGroups: React.FC<{ data: IPipelines }> = ({ data }) => {
+  console.log({ data });
   return (
     <Card.Group>
-      <CardPipeline
-        src='steve.jpg'
-        header='Steve Sanders'
-        meta='Friends of Elliot'
-        description={
-          <>
-            Steve wants to add you to the group <strong>best friends</strong>
-          </>
-        }
-      />
-      <CardPipeline
-        src='molly.png'
-        header='Molly Thomas'
-        meta='New User'
-        description={
-          <>
-            Molly wants to add you to the group <strong>musicians</strong>
-          </>
-        }
-      />
-      <CardPipeline
-        src='jenny.jpg'
-        header='Jenny Lawrence'
-        meta='New User'
-        description={<>Jenny requested permission to view your contact details</>}
-      />
+      {data.pipelines.map((pipe, index) => {
+        const statusColor = pipe.status === 'Failed' ? 'red' : 'green';
+        return (
+          <CardPipeline
+            key={index}
+            stripColor={statusColor}
+            src='steve.jpg'
+            header={pipe.name}
+            meta={pipe.status}
+            description={
+              <ul>
+                <li>start: {pipe.start}</li>
+                <li>last updated: {pipe.lastUpdated}</li>
+              </ul>
+            }
+          />
+        );
+      })}
     </Card.Group>
   );
 };
