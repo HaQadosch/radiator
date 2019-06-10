@@ -1,0 +1,22 @@
+{
+  "name": "radiator",
+  "version": "1.0.0",
+  "description": "pipeline dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaQadosch/radiator.git"
+  },
+  "author": "Xavier Brinon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HaQadosch/radiator/issues"
+  },
+  "homepage": "https://github.com/HaQadosch/radiator#readme",
+  "dependencies": {
+    "create-react-app": "^3.0.1"
+  }
+}
