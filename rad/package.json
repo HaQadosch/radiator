@@ -19,6 +19,7 @@
     "@types/react": "16.8.19",
     "@types/react-dom": "16.8.4",
     "@types/storybook__addon-storyshots": "^4.0.1",
+    "avataaars": "^1.2.1",
     "date-fns": "^2.0.0-alpha.31",
     "react": "^16.8.6",
     "react-async": "^6.2.0",

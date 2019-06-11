@@ -5,6 +5,7 @@ import { CardPipeline } from './Card';
 import { IPipelines } from './Test';
 
 import { enGBDate, dateAgo } from '../utils/transforms';
+import { avatars } from '../utils/avatars';
 
 export const CardExampleGroups: React.FC<{ data: IPipelines }> = ({ data }) => {
   return (
@@ -17,7 +18,7 @@ export const CardExampleGroups: React.FC<{ data: IPipelines }> = ({ data }) => {
           <CardPipeline
             key={index}
             stripColor={statusColor}
-            src='steve.jpg'
+            src={avatars()}
             header={pipe.name}
             meta={pipe.status}
             description={
