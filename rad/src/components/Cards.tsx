@@ -4,11 +4,14 @@ import { Card } from 'semantic-ui-react';
 import { CardPipeline } from './Card';
 import { IPipelines } from './Test';
 
+import { enGBDate, dateAgo } from '../utils/transforms';
+
 export const CardExampleGroups: React.FC<{ data: IPipelines }> = ({ data }) => {
-  console.log({ data });
   return (
     <Card.Group>
       {data.pipelines.map((pipe, index) => {
+        const dateStart = new Date(pipe.start);
+        const dateLastUpdated = new Date(pipe.lastUpdated);
         const statusColor = pipe.status === 'Failed' ? 'red' : 'green';
         return (
           <CardPipeline
@@ -19,8 +22,12 @@ export const CardExampleGroups: React.FC<{ data: IPipelines }> = ({ data }) => {
             meta={pipe.status}
             description={
               <ul>
-                <li>start: {pipe.start}</li>
-                <li>last updated: {pipe.lastUpdated}</li>
+                <li>
+                  start: {enGBDate(dateStart)} - {dateAgo(dateStart)}
+                </li>
+                <li>
+                  last updated: {enGBDate(dateLastUpdated)} - {dateAgo(dateLastUpdated)}
+                </li>
               </ul>
             }
           />
