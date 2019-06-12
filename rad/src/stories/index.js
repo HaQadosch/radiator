@@ -3,20 +3,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-
 import { Button, Welcome } from '@storybook/react/demo';
-
-// import path from 'path'
-// import initStoryshots from '@storybook/addon-storyshots'
-// initStoryshots({ configPath: '../../.storybook' })
+import { withKnobs, object, text } from '@storybook/addon-knobs/react';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
+  .addDecorator(withKnobs)
+  .add('with text', () => <Button onClick={action('clicked')}>{text('Button', 'Click action')}</Button>)
   .add('with some emoji', () => (
     <Button onClick={action('clicked')}>
-      <span role='img' aria-label='so cool'>
+      <span role='img' knob={object('role', { role: 'img' })} aria-label='so cool'>
         😀 😎 👍 💯
       </span>
     </Button>
